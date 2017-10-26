@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chats</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="contactsPage">
+  <ion-list>
+    <ion-item *ngFor="let chat of chats" (click)="onChatStarted(chat.chatid)">
+      <ion-thumbnail item-start>
+        <img src="assets/img/Unknown_Person.png">
+      </ion-thumbnail>
+        <!-- <h3>CHATID: {{ chat.chatid }}</h3> -->
+        <p>By: {{ chat.members }}</p>            
+        <p>Text: {{ chat.message }}</p>       
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <!-- <ion-item *ngFor="let cnt of contacts" (click)="contactSelected(cnt)"> -->
+        <!-- <profile-header [fullName]="cnt.getFullName()" [profileImage]="cnt.profileImage"></profile-header> -->
+        <!-- <p style="margin-top:10px">{{cnt.employment}}</p>
+        <p>{{cnt.education}}</p>
+      </ion-item> -->
+    </ion-list>
+</ion-content>
