@@ -26,10 +26,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { TouchID } from '@ionic-native/touch-id';
 
-const config: SocketIoConfig = { url: 'http://v3.art.dev.swinglifestyle.com:10843', options: {withCredentials: true} };
+
+// const config: SocketIoConfig = { url: 'http://v3.art.dev.swinglifestyle.com:10843', options: {withCredentials: true} };
 
 const config: SocketIoConfig = { url: 'http://v3.art.dev.swinglifestyle.com:10843', options:  { } };
-
 @NgModule({
   declarations: [
     MyApp,
