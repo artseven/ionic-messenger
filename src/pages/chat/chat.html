@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Chat</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="message-wrap">
+        <div class="message"
+        *ngFor="let message of messages; let i = index"
+        [class.right]="(returnParsed(message.sentby)).id === user.id"
+        [class.left]="(returnParsed(message.sentby)).id !== user.id"
+        >
+            <div class="msg-detail">
+                <div class="msg-info">
+                     <p> {{ message.createdOn | date:'medium' | uppercase  }} </p>
+                     <!-- <div [sentby]="returnParsed((message.sentby).id)">{{ sentby  }}</div> -->
+                </div>
+
+                <div class="msg-content">
+                    <span class="triangle"></span>
+                    <p class="line-breaker"> {{ message.message }} </p>
+              </div>
+            </div>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row class="message_row">
+        <ion-col col-9>
+            <ion-item no-lines>
+            <ion-input type="text" placeholder="Message" [(ngModel)]="message"></ion-input>
+            </ion-item>
+        </ion-col>
+        <ion-col col-3>
+            <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === ''">
+            Send
+        </button>
+        </ion-col>
+        </ion-row>
+        </ion-toolbar>
+</ion-footer>
