@@ -11,7 +11,6 @@
         "ionic:build": "ionic-app-scripts build",
         "ionic:serve": "ionic-app-scripts serve"
     },
-<<<<<<< HEAD
     "dependencies": {
         "@angular/common": "4.4.3",
         "@angular/compiler": "4.4.3",
@@ -80,10 +79,4 @@
             "ios"
         ]
     }
-=======
-    "platforms": [
-      "ios"
-    ]
-  }
->>>>>>> 3e89638a302d63f4e566eb974079d5c8e5ac9da6
 }

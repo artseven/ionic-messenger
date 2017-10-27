@@ -15,8 +15,9 @@
         <img src="assets/img/Unknown_Person.png">
       </ion-thumbnail>
         <!-- <h3>CHATID: {{ chat.chatid }}</h3> -->
-        <p>By: {{ chat.members }}</p>            
+        <p>By: {{ chat.members[0]?.name }}</p>            
         <p>Text: {{ chat.message }}</p>       
+        <p>{{ chat.newest_message | date: 'medium' }} </p>
     </ion-item>
   </ion-list>
 
