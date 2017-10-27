@@ -14,6 +14,7 @@ export class ChatPage {
   // initializing values
   public user;
   public chatid;
+  public chat;
   public messages;
   public message;
   private messageObj;
@@ -87,7 +88,7 @@ export class ChatPage {
       // userid: this.user.id,
       sentby: JSON.stringify(this.user),
       createdOn: Date.now(),
-        typeId: 3,
+      typeId: 3,
       message: this.message
     }
     //emitting event with wrapped message object
@@ -108,6 +109,7 @@ export class ChatPage {
     this.scrollVar = setTimeout(()=> {
       this.content.scrollToBottom(300);
     }, 500);
+    console.log('CHAT', this.chat)
   }
 
   ionViewWillLeave() {
