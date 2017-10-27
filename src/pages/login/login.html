@@ -1,0 +1,56 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Log In </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content class="background">
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list no-lines>
+        <!-- <button *ngIf="touchIdAvailable" round text-center></button> -->
+        <!-- <div class="spacer" style="height: 10px;"></div> -->
+        <form (ngSubmit)="login()" #registerForm="ngForm">
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" name="id" [(ngModel)]="credentials.id" required></ion-input>
+        </ion-item>
+        <div class="spacer" style="height: 5px;"></div>
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="credentials.name"></ion-input>
+        </ion-item>
+        <div class="spacer" style="height: 10px;"></div>
+        <!-- <a (click)="passwordreset()">Forgot login details ? <b> Get Help </b></a> -->
+        <div class="spacer" style="height: 10px;"></div>
+        <button ion-button block round outline type="submit" [disabled]="!registerForm.form.valid">Login</button>
+      </form>
+        <div class="spacer" style="height: 10px;"></div>
+        <p>OR</p>
+        <div class="spacer" style="height: 10px;"></div>
+        <button ion-button clear full (click)="signup()">Don't have an account? Sign up</button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <!-- <ion-item>
+      <ion-label>Sign in as...</ion-label>
+      <ion-select [(ngModel)]="options">
+        <ion-option *ngFor="let option of options"> {{ option.name }}</ion-option> 
+
+      </ion-select>
+  </ion-item> -->
+   <!-- <button ion-button (click)="getChats(options)">SIGN IN</button> -->
+    
+  <ion-card>
+      <button ion-button (click)="getChats()" full>GET MY CHATS</button>
+  </ion-card>
+  
+
+</ion-content>
