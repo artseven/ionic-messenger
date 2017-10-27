@@ -15,6 +15,7 @@ export class ChatsPage {
   message: string  = '';
   user: {id: number, name: string};
   chat;
+  items: string[];
 
   constructor(
     private navCtrl: NavController, 
@@ -57,6 +58,7 @@ export class ChatsPage {
   returnParsed(obj: string) {
     return JSON.parse(obj);
   }
+
   showToast(msg) {
     let toast = this.toastCtrl.create({
       message: msg,

@@ -71,8 +71,7 @@ const config: SocketIoConfig = { url: 'http://v3.art.dev.swinglifestyle.com:1084
     File,
     Transfer,
     FilePath,
-    Camera,
-
+    Camera
   ]
 })
 export class AppModule {}
