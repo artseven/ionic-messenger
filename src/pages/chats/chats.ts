@@ -51,9 +51,8 @@ export class ChatsPage {
 
   // Sending to start chat page
   onChatStarted(chat) {
-    console.log('THIS IS OUR CHAT', chat);
-    // this.socket.emit('get_history', {user: this.user.id, chatid: chatId} )
-    // this.navCtrl.push('ChatPage', { user: this.user, chatid: chatId});
+    this.socket.emit('get_history', {user: this.user.id, chatid: chat.chatid} )
+    this.navCtrl.push('ChatPage', { user: this.user, chat: chat});
   }
   
   returnParsed(obj: string) {
