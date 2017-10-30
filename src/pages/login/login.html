@@ -39,6 +39,8 @@
         <div class="spacer" style="height: 10px;"></div>
         <button ion-button clear full (click)="signup()">Don't have an account? Sign up</button>
       </ion-list>
+      <button *ngIf="touchIdAvailable" (click)="startTouchID()" round text-center></button>
+      <button ion-button (click)="skipLogin()">Skip Login</button>
     </ion-card-content>
   </ion-card>  
 </ion-content>
