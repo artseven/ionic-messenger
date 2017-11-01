@@ -19,6 +19,7 @@ export class LoginPage {
   loading: Loading
   user: {id: number, name: string};
   responseData: any;
+  public touchIdAvailable: boolean;
 
   constructor(
     public navCtrl: NavController, 
@@ -36,11 +37,18 @@ export class LoginPage {
        err => console.error('TouchID is not available', err)
      );
  
-   this.touchId.verifyFingerprint('Scan your fingerprint please')
-   .then(
-     res => console.log('Ok', res),
-     err => console.error('Error', err)
-   )
+  //  this.touchId.verifyFingerprint('Scan your fingerprint please')
+  //  .then(
+  //    res => console.log('Ok', res),
+  //    err => console.error('Error', err)
+  //  )
+  }
+
+
+  skipLogin() {
+    this.showLoading();
+    this.socket.connect();
+
   }
 
   login(credentials) {
@@ -65,6 +73,14 @@ export class LoginPage {
     this.socket.emit('get_chats', this.credentials);
     this.navCtrl.push(TabsPage, {user: this.credentials });
 
+  }
+
+  private startTouchID () {
+    this.touchId.verifyFingerprint('Verifying...')
+    .then(
+      res => this.navCtrl.push(TabsPage, {user: this.credentials}),
+      err => console.error('Error', err)
+    );
   }
 
 
