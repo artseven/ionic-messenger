@@ -18,7 +18,7 @@
             <div class="msg-detail">
                 <div class="msg-info">
                      <p> {{ message.createdOn | date:'medium' | uppercase  }} </p>
-                     <!-- <div [sentby]="returnParsed((message.sentby).id)">{{ sentby  }}</div> -->
+                     <div *ngIf="(returnParsed(message.sentby)).id !== user.id">{{ (returnParsed(message.sentby)).name }}</div>
                 </div>
 
                 <div class="msg-content">
