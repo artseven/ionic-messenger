@@ -17,13 +17,14 @@
         >
             <div class="msg-detail">
                 <div class="msg-info">
-                     <p> {{ message.createdOn | date:'medium' | uppercase  }} </p>
                      <div *ngIf="(returnParsed(message.sentby)).id !== user.id">{{ (returnParsed(message.sentby)).name }}</div>
                 </div>
 
                 <div class="msg-content">
                     <span class="triangle"></span>
                     <p class="line-breaker"> {{ message.message }} </p>
+                    <p> {{ message.createdOn | date:'medium' | uppercase  }} </p>
+                    
               </div>
             </div>
         </div>
