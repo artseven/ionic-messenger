@@ -19,13 +19,15 @@
                 <div class="msg-info">
                      <div *ngIf="(returnParsed(message.sentby)).id !== user.id">{{ (returnParsed(message.sentby)).name }}</div>
                 </div>
-
+                
                 <div class="msg-content">
                     <span class="triangle"></span>
                     <p class="line-breaker"> {{ message.message }} </p>
-                    <p> {{ message.createdOn | date:'medium' | uppercase  }} </p>
+                    <p> {{ message.createdOn | date:'short'  }} </p>
                     
               </div>
+
+             
             </div>
         </div>
     </div>
@@ -45,8 +47,9 @@
             </ion-item>
         </ion-col>
         <ion-col col-3>
-            <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="message === ''">
+            <button ion-button icon-right clear color="primary" (click)="sendMessage()" [disabled]="message === ''">
             Send
+            <ion-icon name="send"></ion-icon>
         </button>
         </ion-col>
         </ion-row>
