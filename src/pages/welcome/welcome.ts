@@ -18,8 +18,4 @@ export class WelcomePage {
     this.navCtrl.push(LoginPage);
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad WelcomePage');
-  }
-
 }
