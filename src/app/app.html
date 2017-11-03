@@ -30,8 +30,7 @@
           <button 
            ion-item
            icon-left
-           (click)="onLogout()"
-           *ngIf="isAuthenticated">
+           (click)="onLogout()">
            <ion-icon name="log-out"></ion-icon>log Out
           </button>
       </ion-list>
@@ -39,6 +38,7 @@
 </ion-menu>
 
 <ion-nav [root]="tabsPage" #nav></ion-nav>
+
 
 
 
