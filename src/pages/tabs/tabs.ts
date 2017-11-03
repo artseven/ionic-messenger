@@ -19,7 +19,7 @@ export class TabsPage {
     public navParams: NavParams
   ) {  }
 
-  rootPage: any = WelcomePage;
+  // rootPage: any = WelcomePage;
   userParams = this.navParams.get('user');
   
   tab1Root = ChatsPage;

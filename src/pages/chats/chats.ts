@@ -27,12 +27,12 @@ export class ChatsPage {
     this.user = this.navParams.data
     // Subscribing to all the changes that happen to getChats observable
     this.getChats().subscribe(chatsArr => {
-      // console.log("CHATSARR", chatsArr);
+      console.log("CHATSARR", chatsArr);
       this.newArray = chatsArr;
-      this.newArray.forEach(element => {
-        let parsed = JSON.parse(element.members);
-        element.members = parsed;
-      });
+      // this.newArray.forEach(element => {
+      //   let parsed = JSON.parse(element.members);
+      //   element.members = parsed;
+      // });
       this.chats = this.newArray;
       console.log(this.chats);
     });
