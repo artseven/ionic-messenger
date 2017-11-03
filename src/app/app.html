@@ -1,4 +1,4 @@
-<ion-menu [content]="nav">
+ <ion-menu [content]="nav">
   <ion-header>
       <ion-toolbar>
           <ion-title>Menu</ion-title>
@@ -16,7 +16,7 @@
           <button 
            ion-item
            icon-left
-           (click)="onLoad(signinPage)"
+           (click)="onLoad(loginPage)"
            *ngIf="!isAuthenticated">
            <ion-icon name="log-in"></ion-icon>Sign In
           </button>
@@ -39,4 +39,6 @@
 </ion-menu>
 
 <ion-nav [root]="tabsPage" #nav></ion-nav>
+
+
 
