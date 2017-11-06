@@ -1,3 +1,5 @@
+import { SignupPage } from '../pages/signup/signup';
+import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../providers/auth-service';
 import { NavController, Platform, MenuController,Keyboard } from 'ionic-angular';
 
@@ -15,8 +17,11 @@ import { HomePage } from '../pages/home/home';
 export class MyApp {
   // rootPage:any = WelcomePage;
   welcomePage: any = WelcomePage;
+  loginPage: any = LoginPage;
+  signupPage: any = SignupPage;
   tabsPage = TabsPage;
   profilePage = ProfilePage;
+  isAuthenticated = false;
   @ViewChild('nav') nav: NavController
 
   constructor(
@@ -28,8 +33,12 @@ export class MyApp {
   ) {
     platform.ready().then(() => {
       if (this.authSrv.isAuthenticated === true) {
+        this.isAuthenticated = true
+        console.log('User authorized, sending to TabsPage');
         this.nav.setRoot(this.tabsPage);
       } else {
+        this.isAuthenticated = false;
+        console.log('User is not authorized, sending to WelcomePage');
         this.nav.setRoot(this.welcomePage);
       }
       });
@@ -42,6 +51,12 @@ export class MyApp {
   onLoad(page: any) {
     this.nav.setRoot(page);
     this.menuCtrl.close();
+  }
+
+  onLogout() {
+    this.authSrv.logout();
+    this.menuCtrl.close();
+    this.nav.setRoot(WelcomePage);
   }
 }
 
