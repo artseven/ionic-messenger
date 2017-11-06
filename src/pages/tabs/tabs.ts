@@ -23,7 +23,7 @@ export class TabsPage {
   userParams = this.navParams.get('user');
   
   tab1Root = ChatsPage;
-  tab2Root = SearchPage;
+  // tab2Root = SearchPage;
   tab3Root = GalleryPage
   tab4Root = ProfilePage;
 
