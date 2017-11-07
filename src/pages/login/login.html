@@ -40,7 +40,15 @@
         <button ion-button clear full (click)="signup()">Don't have an account? Sign up</button>
       </ion-list>
       <button *ngIf="touchIdAvailable" (click)="startTouchID()" round text-center></button>
-      <button ion-button (click)="skipLogin()">Skip Login</button>
+      <ion-buttons>
+        <button ion-button (click)="skipLogin()">Skip Login</button>
+        <button ion-button icon-left (click)="getChats()">
+          Get Chats
+          <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+        </button>
+      </ion-buttons>
+      
+      
     </ion-card-content>
   </ion-card>  
 </ion-content>
