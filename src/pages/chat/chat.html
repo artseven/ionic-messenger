@@ -19,15 +19,11 @@
                 <div class="msg-info">
                      <div *ngIf="(returnParsed(message.sentby)).id !== user.id">{{ (returnParsed(message.sentby)).name }}</div>
                 </div>
-                
                 <div class="msg-content">
                     <span class="triangle"></span>
                     <p class="line-breaker"> {{ message.message }} </p>
-                    <p> {{ message.createdOn | date:'short'  }} </p>
-                    
-              </div>
-
-             
+                    <ion-note> {{ message.createdOn | date:'short'  }} </ion-note>
+                </div>
             </div>
         </div>
     </div>
