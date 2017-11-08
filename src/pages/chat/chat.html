@@ -21,7 +21,7 @@
                 </div>
                 <div class="msg-content">
                     <span class="triangle"></span>
-                    <p class="line-breaker"> {{ message.message }} </p>
+                    <p class="line-breaker"> {{ message.message | decodeURIComponent }} </p>
                     <ion-note> {{ message.createdOn | date:'short'  }} </ion-note>
                 </div>
             </div>
